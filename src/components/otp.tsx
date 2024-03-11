@@ -4,7 +4,8 @@ import { Copy } from './icons';
 import { toast } from 'sonner';
 
 function OtpField() {
-  const [otp, setOtp] = useState(['', '', '', '', '']);
+  const emptyOtp = ['', '', '', '', ''];
+  const [otp, setOtp] = useState(emptyOtp);
 
   const generate = () => {
     const otp = Array.from({ length: 5 }, () => Math.floor(Math.random() * 9));
@@ -16,6 +17,9 @@ function OtpField() {
   }, []);
 
   const copyOtp = () => {
+    if (otp.join('') === '') {
+      return;
+    }
     const otpValue = otp.join('');
     navigator.clipboard.writeText(otpValue);
     toast('Copied to clipboard', {
@@ -30,7 +34,7 @@ function OtpField() {
   };
 
   const destroyOtp = () => {
-    setOtp(['', '', '', '', '']);
+    setOtp(emptyOtp);
   };
 
   useEffect(() => {
