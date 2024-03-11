@@ -11,8 +11,8 @@ export default async function Home() {
           <OtpField />
         ) : (
           <div>
-            <h1 className='text-3xl font-bold'>Hi, There</h1>
-            <p className='text-lg'>PLease Login to get your OTP</p>
+            <h1 className='text-3xl font-bold'>Hi There</h1>
+            <p className='text-lg'>PLease Sign up to use this service.</p>
           </div>
         )}
       </div>
