@@ -22,7 +22,7 @@ function OtpField() {
     }
     const otpValue = otp.join('');
     navigator.clipboard.writeText(otpValue);
-    toast('Copied to clipboard', {
+    toast.success('Copied to clipboard', {
       duration: 1000,
       position: 'top-left',
       style: {
